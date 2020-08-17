@@ -1,0 +1,3 @@
+Estou tentando criar um arquivo utilizando o comando cat.
+Será que funciona?
+Veja você mesmo a magia acontecer.
