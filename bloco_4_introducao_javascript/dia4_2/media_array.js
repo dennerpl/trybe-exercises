@@ -9,4 +9,12 @@ for (let index = 0; index < numbers.length; index++) {
     soma = soma + numbers[index];
 }
 
-console.log(`A média deste array é ${soma/(numbers.length)}`)
+let media = soma/(numbers.length)
+
+console.log(`A média deste array é ${media}`)
+
+if (media > 20) {
+    console.log("Media maior do que 20")
+} else {
+    console.log("Número menor ou igual a 20")
+}
