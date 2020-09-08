@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let titulo = document.createElement("h1");
+      titulo.innerText = "Exercício 5.2 - JavaScript DOM";
+      document.querySelector("body").appendChild(titulo);
+
+      let principal = document.createElement("div");
+      principal.className = "main-content";
+      principal.innerText = "Teste";
+      document.querySelector("body").appendChild(principal);
+
+      let central = document.createElement("div");
+      central.className = "center-content";
+      document.querySelector(".main-content").appendChild(central);
+
+      let centerContent = document.createElement("p");
+      let textCenterContent = document.createTextNode(
+        "Foi o exercício quem mandou"
+      );
+      centerContent.appendChild(textCenterContent);
+      central.appendChild(centerContent);
+
+      let left = document.createElement("div");
+      left.className = "left-content";
+      principal.appendChild(left);
+
+      let right = document.createElement("div");
+      right.className = "right-content";
+      right.innerText = "Conteúdo da direita";
+      principal.appendChild(right);
+
+      let foto = document.createElement("img");
+      foto.className = "small-image";
+      foto.setAttribute("src", "https://picsum.photos/200");
+      left.appendChild(foto);
+
+      let novaLista = document.createElement("ul");
+
+      for (i = 1; i <= 10; i += 1) {
+        let element = document.createElement("li");
+        element.innerText = i;
+        novaLista.appendChild(element);
+      }
+
+      right.appendChild(novaLista);
+
+      for (i=0; i < 3; i+=1) {
+          let element = document.createElement('div')
+          element.innerText = "Criado dinâmicamente"
+          principal.appendChild(element)
+      }
+    </script>
+  </body>
+</html>
