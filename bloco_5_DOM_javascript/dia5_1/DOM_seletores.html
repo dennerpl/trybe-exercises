@@ -30,7 +30,7 @@
     </style>
   </head>
   <body>
-    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <h1 class="title">Exercício 5.1 - JavaEscripito</h1>
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <script>
-        /*
+      /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
@@ -51,33 +51,39 @@
         5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
-        function sonho(texto) {
-            document.getElementsByTagName("p")[0].innerText = texto;
-        }
+      function sonho(texto) {
+        document.getElementsByTagName("p")[0].innerText = texto;
+      }
 
-        function changeColor() {
-            document.getElementsByClassName("main-content")[0].style.backgroundColor = "#4ca46d";
-        }
+      function changeColor() {
+        document.getElementsByClassName(
+          "main-content"
+        )[0].style.backgroundColor = "#4ca46d";
+      }
 
-        function changeColorCenter() {
-            document.getElementsByClassName("center-content")[0].style.backgroundColor = "#fff";
-        }
+      function changeColorCenter() {
+        document.getElementsByClassName(
+          "center-content"
+        )[0].style.backgroundColor = "#fff";
+      }
 
-        function corretor() {
-            document.getElementsByClassName("title")[0].innerText = "Exercício 5.1 - Javascript";
-        }
+      function corretor() {
+        document.getElementsByClassName("title")[0].innerText =
+          "Exercício 5.1 - Javascript";
+      }
 
-        function uppercase(){
-            for (i=0; i < document.getElementsByTagName("p").length; i+=1) {
-                document.getElementsByTagName("p")[i].style.textTransform = "uppercase"
-            }
+      function uppercase() {
+        for (i = 0; i < document.getElementsByTagName("p").length; i += 1) {
+          document.getElementsByTagName("p")[i].style.textTransform =
+            "uppercase";
         }
+      }
 
-        function imprimir(){
-            for (i=0; i < document.getElementsByTagName("p").length; i+=1) {
-                console.log(document.getElementsByTagName("p")[i].innerText)
-            }
+      function imprimir() {
+        for (i = 0; i < document.getElementsByTagName("p").length; i += 1) {
+          console.log(document.getElementsByTagName("p")[i].innerText);
         }
+      }
     </script>
   </body>
 </html>
