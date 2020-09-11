@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <article>
+      <h1>Lorem Ipsum</h1>
+      <div>Background-color: <input type="text" id="bgColor" /></div>
+      <div>Text-color: <input type="text" id="txColor" /></div>
+      <div>Font-size: <input type="text" id="size" /></div>
+      <div>Space between lines: <input type="text" id="space" /></div>
+      <div>Font-family: <input type="text" id="fontFamily" /></div>
+      <button id="preferences">Add style preferences</button>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        venenatis mauris arcu, et porta libero tristique nec. Suspendisse ornare
+        volutpat augue tempor aliquet. Donec congue neque velit, ac ornare justo
+        euismod at. Nunc aliquam commodo turpis ut aliquet. Sed velit lectus,
+        porta vitae viverra ac, iaculis ut augue. Vivamus venenatis leo eu quam
+        dapibus sollicitudin. Mauris rhoncus odio et risus ullamcorper, nec
+        laoreet ex sagittis. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas. Praesent sit amet tellus
+        quis diam rutrum hendrerit quis et purus. Etiam ut ultricies leo. In hac
+        habitasse platea dictumst. Nulla blandit eros eu est dictum fringilla.
+        Praesent at sapien sed dolor hendrerit pulvinar sit amet vel ante. Proin
+        porttitor est a lectus consequat, in semper lorem malesuada.
+      </p>
+      <p>
+        Nullam pharetra mollis porttitor. Sed ipsum nisl, euismod a mauris in,
+        porta dignissim purus. Integer hendrerit elit eget finibus fermentum.
+        Aenean ut aliquet dui. Suspendisse vulputate, neque eget sagittis
+        luctus, lacus urna iaculis libero, nec sodales massa ipsum id justo.
+        Nullam ultrices, velit nec ornare porta, sapien diam eleifend eros, non
+        sagittis eros mauris id mauris. In lacinia tortor non pellentesque
+        bibendum. Phasellus vestibulum nisi ex, et scelerisque sem vestibulum
+        non. Praesent at venenatis sem. Sed placerat massa in finibus bibendum.
+        Duis at magna et leo faucibus cursus. Etiam eros lacus, placerat eget
+        erat id, ullamcorper aliquam leo.
+      </p>
+      <p>
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut sit
+        amet eros et mi ornare venenatis ac eget lorem. Aliquam imperdiet ut
+        turpis ut rhoncus. Integer at dolor bibendum, aliquet enim vel, mollis
+        justo. Integer tristique lacus id nibh finibus, non hendrerit lacus
+        lobortis. Nullam id vehicula metus. Donec sem sapien, lobortis a
+        bibendum ut, varius sit amet ipsum. Curabitur nulla augue, interdum eu
+        ante sit amet, dignissim posuere ligula. Maecenas dignissim massa justo.
+        Etiam convallis tortor sed leo iaculis molestie.
+      </p>
+      <p>
+        Quisque a hendrerit justo, faucibus malesuada ipsum. Duis consectetur
+        finibus commodo. Integer ut nunc id leo porttitor auctor. Aenean
+        bibendum odio et commodo malesuada. Integer ante ante, tincidunt eget
+        erat sed, fringilla lobortis nulla. In vitae volutpat massa. Integer
+        consectetur diam vel arcu varius maximus. Duis sed diam felis.
+        Vestibulum in sodales ipsum. Donec sapien ex, mattis nec urna et,
+        hendrerit malesuada nisi. Mauris eu posuere ex. Sed at maximus metus.
+      </p>
+      <p>
+        Morbi fermentum placerat massa sit amet malesuada. Suspendisse potenti.
+        Nulla euismod bibendum maximus. Aliquam erat volutpat. Phasellus
+        ultricies dolor quis nisi accumsan, in blandit arcu finibus. Donec
+        pharetra dapibus elit, sit amet placerat dui condimentum ac. Nulla
+        facilisi. Fusce vel leo dui. Vivamus condimentum vehicula commodo.
+      </p>
+    </article>
+    <script>
+      let background = document.getElementById("bgColor").value;
+      let textColor = document.getElementById("txColor").value;
+      let fontSize = document.getElementById("size").value;
+      let space = document.getElementById("space").value;
+      let font = document.getElementById("fontFamily").value;
+
+      window.onload = function () {
+        document.getElementsByTagName(
+          "body"
+        )[0].style.color = localStorage.getItem("background");
+        document.getElementsByTagName(
+          "body"
+        )[0].style.color = localStorage.getItem("textColor");
+        document.getElementsByTagName(
+          "body"
+        )[0].style.fontSize = localStorage.getItem("fontSize");
+        document.getElementsByTagName(
+          "body"
+        )[0].style.lineHeight = localStorage.getItem("space");
+        document.getElementsByTagName(
+          "body"
+        )[0].style.fontFamily = localStorage.getItem("font");
+      };
+
+      document
+        .getElementById("preferences")
+        .addEventListener("click", function () {
+          let background = document.getElementById("bgColor").value;
+          let textColor = document.getElementById("txColor").value;
+          let fontSize = document.getElementById("size").value;
+          let space = document.getElementById("space").value;
+          let font = document.getElementById("fontFamily").value;
+
+          localStorage.setItem(
+            "background",
+            document.getElementById("bgColor").value
+          );
+          localStorage.setItem(
+            "textColor",
+            document.getElementById("txColor").value
+          );
+          localStorage.setItem(
+            "fontSize",
+            document.getElementById("size").value
+          );
+          localStorage.setItem("space", document.getElementById("space").value);
+          localStorage.setItem(
+            "font",
+            document.getElementById("fontFamily").value
+          );
+          document.getElementsByTagName(
+            "body"
+          )[0].style.backgroundColor = background;
+          document.getElementsByTagName("body")[0].style.color = textColor;
+          document.getElementsByTagName("body")[0].style.fontSize = fontSize;
+          document.getElementsByTagName("body")[0].style.lineHeight = space;
+          document.getElementsByTagName("body")[0].style.fontFamily = font;
+        });
+
+      // document
+      // .getElementById("preferences")
+      // .addEventListener("click", function () {
+      localStorage.setItem(
+        "background",
+        document.getElementById("bgColor").value
+      );
+      localStorage.setItem(
+        "textColor",
+        document.getElementById("txColor").value
+      );
+      localStorage.setItem("fontSize", document.getElementById("size").value);
+      localStorage.setItem("space", document.getElementById("space").value);
+      localStorage.setItem("font", document.getElementById("fontFamily").value);
+
+      //   document.getElementsByTagName("body")[0].style.color = localStorage.getItem("background");
+      //   document.getElementsByTagName("body")[0].style.color = localStorage.getItem("textColor");
+      //   document.getElementsByTagName("body")[0].style.fontSize = localStorage.getItem("fontSize");
+      //   document.getElementsByTagName("body")[0].style.lineHeight = localStorage.getItem("space");
+      //   document.getElementsByTagName("body")[0].style.fontFamily = localStorage.getItem("font");
+      // });
+    </script>
+  </body>
+</html>
