@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+      <h1 class="title">Formulário de inscrição</h1>
+      <form action="" method="get">
     <div class="section">
+        <h2 class="subtitle">Informações pessoais</h2>
       <div class="field">
         <div class="control">
           <input
@@ -109,5 +112,57 @@
         </div>
       </div>
     </div>
+    <div class="section">
+        <h2 class="subtitle">Informações curriculares</h2>
+        <div class="field">
+            <div class="control">
+                <textarea class="textarea is-primary" id="resume" name="resume" placeholder="Resumo de currículo" maxlength="1000"></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+              <input
+                class="input is-primary is-rounded"
+                type="text"
+                name="office"
+                id="office"
+                placeholder="Digite seu cargo"
+                maxlength="40"
+                required="required"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+                <textarea class="textarea is-primary" id="office-description" name="office-description" placeholder="Resumo de seu cargo" maxlength="500"></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+              <input
+                class="input is-primary is-rounded"
+                type="text"
+                name="begin-date"
+                id="begin-date"
+                placeholder="dd/mm/aaaa"
+                pattern="[0-3]{1}[0-9]{1}/[0-1]{1}[0-9]{1}/[1-2]{1}[0-9]{3}"
+                required="required"
+              />
+            </div>
+          </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <input class="button" type="submit" value="Submit input">
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <input class="button" type="reset" value="Reset input"> 
+        </div>
+    </div> 
+</form>
   </body>
 </html>
+
+
