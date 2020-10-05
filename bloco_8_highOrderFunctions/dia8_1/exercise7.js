@@ -65,12 +65,18 @@ const books = [
 
 const expected_result = false;
 
-function everyoneWasBornOnSecXX() {
+function authorUnique() {
   // escreva seu código aqui
-  let result = books.every(
-    (item) => item.author.birthYear > 1900 && item.author.birthYear < 2000
-  );
+  let result;
+  books.forEach((element) => {
+    let birthYear = element.author.birthYear;
+    books.forEach((item) => {
+      if (birthYear == item.author.birthYear) {
+        result = false;
+      }
+    });
+  });
   return result;
 }
 
-assert.equal(everyoneWasBornOnSecXX(), expected_result);
+assert.equal(authorUnique(), expected_result);
